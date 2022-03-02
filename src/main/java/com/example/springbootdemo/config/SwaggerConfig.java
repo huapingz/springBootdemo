@@ -39,8 +39,8 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("网络靶场管理")
-                .description("靶场二期理中心 API 1.0 操作文档")
+                .title("Phish Detect API管理")
+                .description("API 1.0 操作文档")
                 //服务条款网址
                 .termsOfServiceUrl("https://github.com/huapingz")
                 .version("1.0")
