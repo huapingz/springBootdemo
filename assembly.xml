@@ -1,0 +1,54 @@
+<assembly>
+    <id>assembly</id>
+    <!-- 输出格式 -->
+    <formats>
+        <format>tar.gz</format>
+    </formats>
+    <includeBaseDirectory>true</includeBaseDirectory>
+    <!-- 指定文件组的组装方式 -->
+    <fileSets>
+        <!-- 将项目中bin目录下的脚本文件copy到target目录的bin目录下 -->
+        <fileSet>
+            <directory>bin</directory>
+            <outputDirectory>bin</outputDirectory>
+            <!--
+                       0755->即用户具有读/写/执行权限，组用户和其它用户具有读写权限；
+                       0644->即用户具有读写权限，组用户和其它用户具有只读权限；
+                   -->
+            <fileMode>0755</fileMode>
+        </fileSet>
+        <!-- 将项目中src/main/resources目录下的资源文件copy到target目录的conf目录下 -->
+        <fileSet>
+            <directory>config</directory>
+            <outputDirectory>config</outputDirectory>
+            <fileMode>0644</fileMode>
+        </fileSet>
+        <!-- 将项目中src/main/resources目录下的日志文件copy到target目录的logs目录下 -->
+        <fileSet>
+            <directory>logs</directory>
+            <outputDirectory>logs</outputDirectory>
+            <fileMode>0755</fileMode>
+            <excludes>
+                <exclude>**/*</exclude>
+            </excludes>
+        </fileSet>
+        <!-- 将项目中target目录下的包含jar的文件copy到lib目录下 -->
+        <fileSet>
+            <directory>target</directory>
+            <outputDirectory>lib</outputDirectory>
+            <includes>
+                <include>*.jar</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+    <!-- 指定依赖jar包输出的目录 -->
+    <dependencySets>
+        <dependencySet>
+            <useProjectArtifact>true</useProjectArtifact>
+            <outputDirectory>lib</outputDirectory>
+            <!-- 只包含runtime作用域的依赖 -->
+            <scope>runtime</scope>
+        </dependencySet>
+    </dependencySets>
+
+</assembly>
