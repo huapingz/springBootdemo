@@ -24,7 +24,7 @@ public class HelloWorldController {
         return new ResultData("1","success",helloWorld);
     }
 
-    @ApiOperation("测试方法GET")
+    @ApiOperation("测试方法 GET")
     @RequestMapping(value = "/helloWorld",method = RequestMethod.GET,produces = "application/json")
     public ResultData helloWorld2(TestData helloWorld){
         System.out.println(helloWorld.toString());

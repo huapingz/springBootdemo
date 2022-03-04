@@ -33,13 +33,13 @@
             </excludes>
         </fileSet>
         <!-- 将项目中target目录下的包含jar的文件copy到lib目录下 -->
-        <fileSet>
-            <directory>target</directory>
-            <outputDirectory>lib</outputDirectory>
-            <includes>
-                <include>*.jar</include>
-            </includes>
-        </fileSet>
+<!--        <fileSet>-->
+<!--            <directory>target</directory>-->
+<!--            <outputDirectory>lib</outputDirectory>-->
+<!--            <includes>-->
+<!--                <include>*.jar</include>-->
+<!--            </includes>-->
+<!--        </fileSet>-->
     </fileSets>
     <!-- 指定依赖jar包输出的目录 -->
     <dependencySets>
